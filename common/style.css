@@ -1,1 +1,15 @@
 @charset "UTF-8";
+@import url(http://font.imbc.com/noto/noto.css);
+@import url(http://font.imbc.com/mbcnew/mbcnew.css);
+
+.wdid_wrap {width: 100%; max-width: 1216px; margin: 0 auto; height: 5500px; background: #fff url('../images/wildidol_bg.jpg') 0 0 no-repeat; background-size: 1216px; background-position: top; position: relative;}
+.wdid_wrap .wdid_logo {width: 302px; height: 194px; margin: 0 auto; padding-top: 50px;}
+.wdid_wrap .wdid_logo img {display: block; width: 100%;}
+.wdid_wrap .wdid_txt {width: 670px; margin: 0 auto; font-family: 'mbcnew-light'; text-align: center;}
+.wdid_wrap .wdid_txt .wdtxt_01 {font-family: 'mbcnew-medium'; font-size: 32px; line-height: 50px; letter-spacing: -1px; color: #63ed8f; margin-top: 10px;}
+.wdid_wrap .wdid_txt .wdtxt_01 span {font-family: 'mbcnew-bold'; line-height: 50px; letter-spacing: -1px; color: #63ed8f; margin-top: 10px}
+.wdid_wrap .wdid_txt .wdtxt_01 strong {font-size: 40px;}
+.wdid_wrap .wdid_txt .wdtxt_02 {font-size: 24px; line-height: 38px; letter-spacing: -1px; color: #ffffff; margin-top: 10px;}
+.wdid_wrap .wdid_txt .wdtxt_03 {width: 630px; height: 150px; background: url('../images/wildidol_vote.png') 0 0 no-repeat; background-size: 630px; background-position: top; text-align: left; margin-top: 10px;}
+.wdid_wrap .wdid_txt .wdtxt_03 ul {padding: 60px 0px 0px 80px;}
+.wdid_wrap .wdid_txt .wdtxt_03 ul li {font-size: 18px; line-height: 36px; letter-spacing: -1px; color: #e1e1e1; font-family: 'mbcnew-light';}
