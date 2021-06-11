@@ -13,3 +13,16 @@
 .wdid_wrap .wdid_txt .wdtxt_03 {width: 630px; height: 150px; background: url('../images/wildidol_vote.png') 0 0 no-repeat; background-size: 630px; background-position: top; text-align: left; margin-top: 10px;}
 .wdid_wrap .wdid_txt .wdtxt_03 ul {padding: 60px 0px 0px 80px;}
 .wdid_wrap .wdid_txt .wdtxt_03 ul li {font-size: 18px; line-height: 36px; letter-spacing: -1px; color: #e1e1e1; font-family: 'mbcnew-light';}
+.wdid_wrap .wdid_lst {width: 1054px; margin: 0 auto; margin-top: 5px;}
+.wdid_wrap .wdid_lst ul {overflow: hidden;}
+.wdid_wrap .wdid_lst ul li {width: 240px; height: 350px; float: left; margin-left: 30px; overflow: hidden; margin-top: 40px; cursor: pointer;}
+.wdid_wrap .wdid_lst ul li .q-title {font-size: 24px; line-height: 38px; letter-spacing: -1px; color: #ffffff; float: left;}
+.wdid_wrap .wdid_lst ul li .input {float: right;}
+.wdid_wrap .wdid_lst ul li .input input[type="checkbox"] {display: none;}
+.wdid_wrap .wdid_lst ul li .input input[type="checkbox"] + label.chck_ico {display: inline-block; width: 30px; height: 30px; border: none; background: url('../images/wildidol_chk.png') -38px 0px no-repeat; vertical-align: middle; position: relative; cursor: pointer;}
+.wdid_wrap .wdid_lst ul li .input input[type="checkbox"]:checked + label.chck_ico {background: url('../images/wildidol_chk.png') 1px 0 no-repeat;}
+.wdid_wrap .wdid_lst ul li .input input[type="checkbox"]:checked + label.chck_ico {background: url('../images/wildidol_chk.png') 1px 0 no-repeat;}
+.wdid_wrap .wdid_lst ul li .wdid_cst {display: block; width: 240px; height: 300px; overflow: hidden;}
+.bd_63ed8f {border: 2px solid #63ed8f; box-sizing: border-box;}
+.wdid_wrap .wdid_lst ul li .wdid_cst img {display: block; width: 100%;}
+.wdid_wrap .btn-submit {display: inline-block; width: 394px; height: 132px; position: absolute; bottom: 30px; left: 50%; margin-left: -170px; cursor: pointer;}
