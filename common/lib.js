@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(function () {
     // 화면에서 4개의 인물 사진마다 좌측 여백을 0으로 설정
     $('.wdid_lst ul li:nth-child(4n+1)').css('margin-left', '0');
 
