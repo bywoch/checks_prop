@@ -1,6 +1,4 @@
 $(function () {
-    // 화면에서 4개의 인물 사진마다 좌측 여백을 0으로 설정
-    $('.wdid_lst ul li:nth-child(4n+1)').css('margin-left', '0');
 
     // 인물 사진 클릭시 체크박스 동작 및 선택 제한 실행
     $(".wdid_lst ul li").click(function () {
@@ -29,4 +27,17 @@ $(function () {
             alert('선택 항목을 7개 이하 선택해주세요.'); // 경고 메시지 표시
         }
     });
+});
+
+//ES6 version
+document.addEventListener('DOMContentLoaded', () => {
+    const photoItems = document.querySelectorAll('.wdid_lst ul li');
+    
+    // 화면에서 4개의 인물 사진마다 좌측 여백을 0으로 설정
+    photoItems.forEach((item, index) => {
+        if (index % 4 === 0) {
+            item.style.marginLeft = '0';
+        }
+    });
+    
 });
