@@ -131,3 +131,22 @@ function Vote(e) {
         // });
     }
 }
+
+/* AJAX를 사용하여 주어진 dataUrl에 POST 요청을 보내고, param으로 전달된 데이터와 함께 서버로부터 결과를 받아 처리 */
+function PollVote(dataUrl, complete, param, returnType) {
+    // 도메인 설정 (CORS 처리를 위해 필요한 부분)
+    document.domain = "imbc.com";
+
+    // AJAX를 사용하여 투표 정보를 전송하고 결과를 처리하는 함수
+    $.ajax({
+        url: dataUrl, // 투표 데이터 URL
+        method: "POST", // HTTP 메서드: POST
+        data: param, // 전송할 데이터 파라미터
+        contentType: "application/x-www-form-urlencoded; charset=UTF-8", // 데이터 타입 및 문자 인코딩 설정
+        async: false, // 동기적으로 요청 처리 (비동기 방식 사용 안 함)
+        crossDomain: true, // 다른 도메인 간 요청 허용 (CORS 활성화)
+        dataType: "jsonp", // 데이터 타입: JSONP (JSON with Padding)
+        success: complete, // 요청이 성공했을 때 호출될 콜백 함수
+        error: null // 요청이 실패했을 때 호출될 콜백 함수 (지금은 null로 설정되어 실패 시 아무 작업 없음)
+    });
+}
