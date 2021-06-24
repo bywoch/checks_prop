@@ -150,3 +150,58 @@ function PollVote(dataUrl, complete, param, returnType) {
         error: null // 요청이 실패했을 때 호출될 콜백 함수 (지금은 null로 설정되어 실패 시 아무 작업 없음)
     });
 }
+
+/* URL에서 특정 매개변수의 값을 추출하는 함수 및 현재 페이지의 URL에서 지정한 매개변수 이름을 가진 파라미터의 값을 추출하여 반환 */
+function getURLParam(strParamName) {
+    var strReturn = ""; // 반환될 매개변수의 값을 초기화
+
+    try {
+        var strHref = window.location.href; // 현재 페이지의 URL 가져오기
+        if (strHref.indexOf("?") > -1) {
+            var strQueryString = strHref.substr(strHref.indexOf("?")).toLowerCase(); // URL의 쿼리 스트링 부분을 추출하고 소문자로 변환
+            var aQueryString = strQueryString.split("&"); // 쿼리 스트링을 '&' 문자를 기준으로 분리하여 배열에 저장
+            for (var iParam = 0; iParam < aQueryString.length; iParam++) {
+                // 현재 파라미터가 strParamName과 일치하는지 확인
+                if (aQueryString[iParam].indexOf(strParamName.toLowerCase() + "=") > -1) {
+                    var aParam = aQueryString[iParam].split("="); // 파라미터를 '=' 문자를 기준으로 분리하여 배열에 저장
+                    strReturn = aParam[1]; // 반환될 매개변수에 파라미터 값 저장
+                    break; // 일치하는 파라미터를 찾았으므로 루프 종료
+                }
+            }
+        }
+    }
+    catch (e) {
+        // 오류가 발생한 경우 아무 작업 없음
+    }
+    return unescape(strReturn); // URL 디코딩된 값을 반환
+}
+
+function jsonpEventAgree(data) {
+    // 데이터의 반환 값이 'E'가 아니고 동의 여부가 'Y'인 경우
+    if (data.rtn != 'E' && data.agreeYN == 'Y') {
+        // 아무 작업도 수행하지 않음
+    }
+    // 데이터의 반환 값이 'E'이거나 동의 여부가 'N'인데 'hdnAgree' 값이 비어있는 경우
+    else if (data.rtn == 'E' || (data.agreeYN == 'N' && document.getElementById('hdnAgree').value.length == 0)) {
+        // 이벤트 유형, 페이지 URL, 페이지 종류, 페이지 공개 여부 설정
+        var tType = "B"; // 이벤트 유형
+        var rUrl = encodeURIComponent(document.location.href); // 페이지 URL 인코딩
+        var rType = "U"; // 페이지 종류 (User Page)
+        var isOpen = "N"; // 페이지 공개 여부 (비공개)
+
+        // 이벤트 동의 페이지 호출 함수 실행
+        fnPageEventAgree(EventID, tType, rType, rUrl, isOpen);
+    }
+    
+    // 데이터의 동의 여부 값을 변수에 저장
+    sRtn = data.agreeYN;
+    
+    // 'hdnAgree' 필드 값 설정
+    document.getElementById('hdnAgree').value = sRtn;
+
+    // 동의 여부가 "R"인 경우 알림 메시지 표시
+    if (sRtn == "R") {
+        alert('개인정보 동의가 준비 중인 상태입니다');
+    }
+}
+
