@@ -205,3 +205,8 @@ function jsonpEventAgree(data) {
     }
 }
 
+function SendEventAgree(rtn) {
+    // 동의 여부 값을 받아서 'hdnAgree' 필드 값으로 설정하는 함수
+    document.getElementById('hdnAgree').value = rtn;
+}
+
